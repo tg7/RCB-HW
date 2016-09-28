@@ -1,0 +1,72 @@
+<h1>Project Management Tool</h1>
+
+<h2>Create a new person</h2>
+
+{{#if logged_in}}
+  <form action="/people/create" method="POST">
+    <input type="text" name="name">
+
+    <input type="submit">
+  </form>
+{{/if}}
+
+{{#unless logged_in}}
+  <p>
+    You must login to add a person.
+  </p>
+{{/unless}}
+
+<h2>People</h2>
+
+<ul>
+  {{#each people}}
+    <li>
+      {{this.name}}
+      <ul>
+        {{#if ../logged_in}}
+          <li>
+            <form action="/people/{{this.id}}/tasks/create" method="POST" style="display: inline">
+              <input type="text" name="task" placeholder="add task here">
+              <input type="submit" value"assign task">
+            </form>
+          </li>
+        {{/if}}
+
+        {{#if logged_in}}
+  <form action="/people/create" method="DELETE">
+    <input type="text" name="name">
+
+    <input type="submit">
+  </form>
+{{/if}}
+
+        {{#each this.Tasks }}
+          <li>
+            {{this.task}}
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>
+
+<div class="col-xs-6 text-center" class="task">
+      <div class="row">
+        {{#each this.task}}
+          {{#unless this.devoured}}
+        <div class="col-xs-9 text-center">
+          <pre>{{this.id}}. {{this.burger_name}}
+          </pre>
+              <!-- {{this.Date}} -->
+        </div>
+        <div class="col-xs-3 text-center">
+          <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+            <input input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
+            <button type="submit" class="btn btn-default">Devour it!</button>
+          </form>
+        </div>
+        {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+

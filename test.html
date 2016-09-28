@@ -1,0 +1,43 @@
+<!--Top of Page-->
+
+1) SELECT * FROM USERS;
+
+2) SELECT * FROM USERS WHERE USERNAME = "BETTY";
+
+3)
+
+4) CREATE TABLE meals(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR NOT NULL (30),
+  primary key(id)
+)
+
+
+5) INSERT INTO meals (id, name) VALUES (1, 'pizza');
+
+6)
+   UPDATE USERS 
+   SET username = "myfavbandisglassanimals" WHERE id = 3;
+
+
+7) 
+   DELETE FROM USERS
+   WHERE id = 4;
+
+8) How would you show all the columns of all the meals and all the
+columns for the user that owns each meal in one query?
+
+   SELECT * FROM meals 
+
+   SELECT username
+   FROM users
+   LEFT OUTER JOIN meals
+   ON 
+
+9)
+
+10)
+
+11)
+
+12)
