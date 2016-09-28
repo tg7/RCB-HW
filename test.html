@@ -4,7 +4,7 @@
 
 2) SELECT * FROM USERS WHERE USERNAME = "BETTY";
 
-3)
+3) 
 
 4) CREATE TABLE meals(
   id INT NOT NULL AUTO_INCREMENT,
@@ -41,3 +41,32 @@ columns for the user that owns each meal in one query?
 11)
 
 12)
+
+To defend myself from a group of lions I ran down a path and found 10 rocks. I then threw the rocks in their direction to scare them away and stop them from eating me alive. The rocks will decrease the lion speed and increase mine. The below javascript function enables me to earn more rocks on my journey to stay alive!
+
+
+
+var rocks = 10;
+var rockthrow = -1;
+
+var lionSpeed = 5;
+var toddSpeed = 3;
+
+    
+  function play() {
+
+    if (rocks - rockthrow) {
+      lionSpeed--;
+      toddSpeed++;
+      console.log('todd gains speed and the lions slow down')
+
+
+    } else (rocks != rockthrow) {
+      lionSpeed++;
+      toddSpeed--;
+      console.log('the lions gain speed and the todd slows down')
+
+
+    } 
+}
+play();
